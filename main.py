@@ -44,14 +44,8 @@ def get_organisations(request):
     project_url="https://cloudresourcemanager.googleapis.com/v1beta1/organizations:search"
     authToken = refAccessToken(creds)
     resp = response_post_Data(authToken,project_url)
-    #org_list = json.loads(resp)
-    #print(org_list)
+    org_list = json.loads(resp)
+    print(org_list)
     #return org_list
-    #string = resp.read().decode('utf-8')
-    json_obj = json.loads(resp)
-    response_json = json_obj.decode('utf-8')
-    return json.loads(response_json)
-    #return json_obj
-    print(json.loads(response_json))
-    return jsonify(json.loads(response_json))
+
     
